@@ -2,7 +2,7 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-RUN npm install 
+RUN npm install -g npm@latest 
 
 COPY package*.json /.
 
