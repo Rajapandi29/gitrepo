@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region in which to run the application."
   type        = string
-  default     = "ap-south-1"
+  default     = "us-east-1"
 }
 
 variable "app_repository" {
