@@ -1,0 +1,16 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+
+  frontend:
+    build: ./public
+    ports:
+      - "8094:80"
+    volumes:
+      - ./public:/usr/share/nginx/html
+  db:
+    build: ./db

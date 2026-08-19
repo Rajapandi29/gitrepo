@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plateful — Food, delivered beautifully</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/extra.css" />
+  </head>
+  <body>
+    <header><a class="logo" href="#top">plate<span>ful</span></a><nav><a href="#menu">Menu</a><a href="#how">How it works</a></nav><button class="account-link" id="open-auth">Sign in</button><button class="cart-link" id="open-cart">Bag <b id="cart-count">0</b></button></header>
+    <main id="top">
+      <section class="hero"><div><p class="eyebrow">LOCAL FAVOURITES, AT YOUR DOOR</p><h1>Good food.<br><i>Good mood.</i></h1><p class="hero-copy">Freshly made comfort food from the kitchens you love. Delivered warm, fast, and exactly when hunger calls.</p><a class="primary-button" href="#menu">Browse the menu <span>→</span></a></div><div class="hero-art"><div class="sun"></div><div class="plate">🍜</div><span class="tomato one">●</span><span class="tomato two">●</span><span class="leaf">✦</span><div class="delivery-note">⚡ Delivered in<br><strong>30 minutes</strong></div></div></section>
+      <section class="trust"><span>✦ Handpicked kitchens</span><span>✦ Fresh ingredients</span><span>✦ Live order updates</span></section>
+      <section class="menu-section" id="menu"><div class="section-heading"><div><p class="eyebrow">TODAY'S MENU</p><h2>Made for your cravings.</h2></div><div class="filters" id="filters"></div></div><div class="menu-grid" id="menu-grid"><p>Loading our favourites…</p></div></section>
+      <section class="how" id="how"><p class="eyebrow">SIMPLE AS THAT</p><h2>From menu to meal.</h2><div class="steps"><div><b>01</b><h3>Pick your favourites</h3><p>Browse dishes made fresh by local kitchens.</p></div><div><b>02</b><h3>Place your order</h3><p>A few taps is all it takes to check out.</p></div><div><b>03</b><h3>Enjoy at home</h3><p>Track it live, then dig in while it’s warm.</p></div></div></section>
+    </main>
+    <footer>© 2026 Plateful <span>Made with care for hungry people.</span></footer>
+    <aside class="cart-panel" id="cart-panel" aria-hidden="true"><div class="cart-head"><h2>Your bag</h2><button class="close" id="close-cart">×</button></div><div id="cart-items" class="cart-items"></div><div class="cart-footer"><div class="total"><span>Total</span><strong id="cart-total">₹0</strong></div><button class="primary-button checkout" id="checkout">Continue to checkout <span>→</span></button></div></aside><div class="overlay" id="overlay"></div>
+    <dialog id="checkout-dialog"><form id="checkout-form"><button type="button" class="close modal-close">×</button><p class="eyebrow">ALMOST THERE</p><h2>Where should we send it?</h2><label>Your name<input name="name" required placeholder="Alex Johnson" /></label><label>Delivery address<textarea name="address" required placeholder="Flat / house no., street, area"></textarea></label><label>Phone number <small>(optional)</small><input name="phone" placeholder="+91 98765 43210" /></label><button class="primary-button checkout" type="submit">Place order <span>→</span></button><p class="form-error" id="form-error"></p></form></dialog>
+    <dialog id="success-dialog"><div class="success"><div class="success-icon">✓</div><p class="eyebrow">ORDER CONFIRMED</p><h2>It’s on its way!</h2><p id="success-text"></p><button class="primary-button checkout" id="track-order">Track my order <span>→</span></button><button class="text-button modal-close">Back to menu</button></div></dialog>
+    <dialog id="auth-dialog"><form id="auth-form"><button type="button" class="close modal-close">×</button><p class="eyebrow" id="auth-eyebrow">WELCOME BACK</p><h2 id="auth-title">Sign in to Plateful</h2><label id="name-field" hidden>Your name<input name="name" placeholder="Alex Johnson" /></label><label>Email<input name="email" type="email" required placeholder="you@example.com" /></label><label>Password<input name="password" type="password" required minlength="6" placeholder="At least 6 characters" /></label><button class="primary-button checkout" type="submit" id="auth-submit">Sign in <span>→</span></button><p class="form-error" id="auth-error"></p><p class="auth-switch"><span id="auth-question">New to Plateful?</span> <button type="button" id="toggle-auth">Create an account</button></p></form></dialog>
+    <dialog id="tracking-dialog"><div class="tracking"><button type="button" class="close modal-close">×</button><p class="eyebrow">LIVE DELIVERY TRACKING</p><h2 id="tracking-title">Your food is on the way</h2><p class="tracking-copy" id="tracking-eta">Updating your delivery…</p><div id="tracking-map"></div><div class="tracking-legend"><span><i class="dot restaurant"></i>Kitchen</span><span><i class="dot driver"></i>Your rider</span><span><i class="dot home"></i>Your door</span></div></div></dialog>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
