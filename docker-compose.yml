@@ -1,16 +1,17 @@
 services:
+  db:
+    build: ./data
+     
   backend:
-    build: .
+    build: ./backend
     ports:
-      - "5000:5000"
-    volumes:
-      - .:/app
-
+      - "3000:3000"
+    depends_on:
+      - db
+  
   frontend:
-    build: ./public
+    build: ./frontend
     ports:
       - "8094:80"
-    volumes:
-      - ./public:/usr/share/nginx/html
-  db:
-    build: ./db
+    depends_on:
+      - backend
