@@ -1,0 +1,7 @@
+aws_region     = "ap-south-1"
+app_repository = "https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY.git"
+instance_type  = "t3.micro"
+
+# Optional: enable SSH only from your public IP.
+# key_name = "your-existing-ec2-keypair"
+# ssh_cidr = "YOUR.PUBLIC.IP.ADDRESS/32"

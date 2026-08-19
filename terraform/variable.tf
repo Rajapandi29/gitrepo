@@ -1,95 +1,28 @@
 variable "aws_region" {
-  description = "AWS region"
+  description = "AWS region in which to run the application."
+  type        = string
+  default     = "ap-south-1"
+}
+
+variable "app_repository" {
+  description = "Public Git repository URL containing docker-compose.yml at its root."
   type        = string
 }
 
-variable "project_name" {
-  description = "Project name"
+variable "instance_type" {
+  description = "EC2 instance size."
   type        = string
+  default     = "t3.micro"
 }
 
-variable "environment" {
-  description = "Environment name"
+variable "key_name" {
+  description = "Optional existing EC2 key pair name for SSH access. Leave null to disable SSH."
   type        = string
+  default     = null
 }
 
-variable "vpc_cidr" {
-  description = "VPC CIDR"
+variable "ssh_cidr" {
+  description = "CIDR allowed to SSH to the instance when key_name is set."
   type        = string
-}
-
-variable "public_subnet_1_cidr" {
-  description = "Public subnet 1 CIDR"
-  type        = string
-}
-
-variable "public_subnet_2_cidr" {
-  description = "Public subnet 2 CIDR"
-  type        = string
-}
-
-variable "private_subnet_1_cidr" {
-  description = "Private subnet 1 CIDR"
-  type        = string
-}
-
-variable "private_subnet_2_cidr" {
-  description = "Private subnet 2 CIDR"
-  type        = string
-}
-
-variable "availability_zone_1" {
-  description = "First availability zone"
-  type        = string
-}
-
-variable "availability_zone_2" {
-  description = "Second availability zone"
-  type        = string
-}
-
-variable "frontend_image" {
-  description = "Frontend Docker image URI"
-  type        = string
-}
-
-variable "backend_image" {
-  description = "Backend Docker image URI"
-  type        = string
-}
-
-variable "frontend_container_port" {
-  description = "Frontend container port"
-  type        = number
-}
-
-variable "backend_container_port" {
-  description = "Backend container port"
-  type        = number
-}
-
-variable "db_name" {
-  description = "PostgreSQL database name"
-  type        = string
-}
-
-variable "db_username" {
-  description = "PostgreSQL username"
-  type        = string
-}
-
-variable "db_password" {
-  description = "PostgreSQL password"
-  type        = string
-  sensitive   = true
-}
-
-variable "ecs_task_cpu" {
-  description = "ECS task CPU"
-  type        = number
-}
-
-variable "ecs_task_memory" {
-  description = "ECS task memory"
-  type        = number
+  default     = "0.0.0.0/0"
 }
