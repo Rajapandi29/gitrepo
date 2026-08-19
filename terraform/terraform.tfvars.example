@@ -1,5 +1,5 @@
-aws_region     = "ap-south-1"
-app_repository = "https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY.git"
+aws_region     = "us-east-1"
+app_repository = "https://github.com/Rajapandi29/gitrepo.git"
 instance_type  = "t3.micro"
 
 # Optional: enable SSH only from your public IP.
