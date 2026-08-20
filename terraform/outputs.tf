@@ -1,14 +1,23 @@
-output "instance_id" {
-  description = "EC2 instance ID."
-  value       = aws_instance.app.id
+output "alb_dns_name" {
+  description = "Application Load Balancer DNS"
+
+  value = aws_lb.main.dns_name
 }
 
-output "public_ip" {
-  description = "Public IP address of the EC2 instance."
-  value       = aws_instance.app.public_ip
+output "plateful_url" {
+  description = "Plateful application URL"
+
+  value = "http://${aws_lb.main.dns_name}"
 }
 
-output "application_url" {
-  description = "URL for the application."
-  value       = "http://${aws_instance.app.public_ip}:8094"
+output "ecs_cluster_name" {
+  value = aws_ecs_cluster.main.name
+}
+
+output "frontend_service_name" {
+  value = aws_ecs_service.frontend.name
+}
+
+output "backend_service_name" {
+  value = aws_ecs_service.backend.name
 }
