@@ -1,16 +1,12 @@
-# Deploy Plateful to EC2
+# Run the app on EC2
 
-1. Push this application to a public Git repository.
-2. Copy `terraform.tfvars.example` to `terraform.tfvars` and replace `app_repository` with that repository URL.
-3. Configure AWS credentials locally, then run:
+1. Put the application in a public Git repository.
+2. Copy `terraform.tfvars.example` to `terraform.tfvars` and set `app_repository`.
+3. Configure AWS credentials and run:
 
    ```bash
-   cd terraform
    terraform init
-   terraform plan
    terraform apply
    ```
 
-Terraform outputs `ec2_instance_id` and `application_url`. Open the application URL after the EC2 user-data script finishes (usually a few minutes).
-
-The app is served on port `8094`. PostgreSQL remains inside Docker on the instance and is not public.
+Open the printed `application_url` after the instance finishes booting. The app is available on port `8094`.

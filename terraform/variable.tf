@@ -5,7 +5,7 @@ variable "aws_region" {
 }
 
 variable "app_repository" {
-  description = "Public Git repository URL containing docker-compose.yml at its root."
+  description = "Public Git repository containing docker-compose.yml."
   type        = string
 }
 
@@ -15,14 +15,3 @@ variable "instance_type" {
   default     = "t3.micro"
 }
 
-variable "key_name" {
-  description = "Optional existing EC2 key pair name for SSH access. Leave null to disable SSH."
-  type        = string
-  default     = null
-}
-
-variable "ssh_cidr" {
-  description = "CIDR allowed to SSH to the instance when key_name is set."
-  type        = string
-  default     = "0.0.0.0/0"
-}
