@@ -18,9 +18,9 @@ availability_zone_1 = "us-east-1a"
 
 availability_zone_2 = "us-east-1b"
 
-frontend_image = "YOUR_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/plateful-frontend:latest"
+frontend_image = "646362344732.dkr.ecr.us-east-1.amazonaws.com/plateful-frontend:latest"
 
-backend_image = "YOUR_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/plateful-backend:latest"
+backend_image = "646362344732.dkr.ecr.us-east-1.amazonaws.com/plateful-backend:latest"
 
 frontend_port = 80
 
